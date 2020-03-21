@@ -72,7 +72,7 @@
                                 'menuHref':"/hostProgram/index"},
                             {"treeLeaf":true,
                                 'menuName':'文件关联',
-                                'menuHref':"file"},
+                                'menuHref':"/file/index"},
                             {"treeLeaf":true,
                                 'menuName':'Android 应用',
                                 'menuHref':"/android/index"}
@@ -201,11 +201,19 @@
             handleCommand(command) {
                 //个人
                 if(command=='a'){
-
+                    this.$router.push(
+                        {
+                            path: '/Profile/index',
+                        }
+                    );
                 }
                 //事务
                 if(command=='b'){
-
+                    this.$router.push(
+                        {
+                            path: '/mailbox/index',
+                        }
+                    );
                 }
                 //注销
                 if(command=='c'){
