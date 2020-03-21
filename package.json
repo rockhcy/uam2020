@@ -41,7 +41,7 @@
       "eslint:recommended"
     ],
     "rules": {
-      "eslint-disable-next-line": "no-unused-vars"
+      "eslint-disable-next-line":"no-unused-vars"
     },
     "parserOptions": {
       "parser": "babel-eslint"

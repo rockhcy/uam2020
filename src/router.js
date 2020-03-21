@@ -27,6 +27,7 @@ import Management from './views/management/index'
 import RemoteUser from './views/remoteUser/index'
 import Journal from './views/journal/index'
 import SystemLog from './views/systemLog/index'
+import UpdateClientForm from './views/updateClient/form'
 import Profile from './views/profile/index'
 import AppGroup from  './views/appGroup/index'
 Vue.use(Router)
@@ -63,8 +64,8 @@ export default new Router({
           component: Host,
         },
         {
-          path: '/license/index',
-          name: '/license/index',
+          path: '/licence/index',
+          name: '/licence/index',
           component: License,
         },
         {
@@ -150,6 +151,9 @@ export default new Router({
           name: '/systemLog/index',
           component: SystemLog,
         },{
+          path: '/updateClient/add',
+          name: '/updateClient/add',
+          component: UpdateClientForm,
           path: '/profile/index',
           name: '/profile/index',
           component: Profile,

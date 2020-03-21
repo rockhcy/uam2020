@@ -1,4 +1,7 @@
 <template>
+<div>
+    test 
+</div>
 </template>
 <script>
     export default {
@@ -17,7 +20,7 @@
     }
 </script>
 //下拉框样式
-<style lang="scss">
+<style lang="scss" scoped>
     .el-select-dropdown {
         background-color: #d1d5e5 !important;
         color: #000000;
