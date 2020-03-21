@@ -51,7 +51,7 @@
         display: block;
         float: left;
         position: relative;
-        background: #ffffff;
+        border-top: 1px solid #e4e7ed;
         /*text-align: center;*/
     }
 </style>

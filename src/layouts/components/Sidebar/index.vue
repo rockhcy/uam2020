@@ -14,7 +14,7 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </figure>
-        <el-row style="height: calc(100% - 200px)">
+        <el-row style="height: calc(100% - 200px);background: #2f4050">
             <el-scrollbar class="hide-x" :native="false" :noresize="false" style="height: 100%">
                 <el-menu
                         router
@@ -298,6 +298,7 @@
         text-align: center;
         display: block;
         color: #ffffff;
+        background: #2f4050;
     }
 
     .usreImg {
