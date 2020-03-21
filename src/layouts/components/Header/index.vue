@@ -31,7 +31,6 @@
     .top {
         width: 100%;
         height: 63px;
-        background-color: #ffffff;
     }
     .grid-content {
         height: 100%;

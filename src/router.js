@@ -27,6 +27,7 @@ import Management from './views/management/index'
 import RemoteUser from './views/remoteUser/index'
 import Journal from './views/journal/index'
 import SystemLog from './views/systemLog/index'
+import Profile from './views/profile/index'
 Vue.use(Router)
 
 export default new Router({
@@ -147,9 +148,11 @@ export default new Router({
           path: '/systemLog/index',
           name: '/systemLog/index',
           component: SystemLog,
+        },{
+          path: '/profile/index',
+          name: '/profile/index',
+          component: Profile,
         },
-
-
   ]}
   ]
 })
