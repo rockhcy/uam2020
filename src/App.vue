@@ -43,7 +43,7 @@
         -moz-osx-font-smoothing: grayscale;
         /*text-align: center;*/
         color: #2c3e50;
-        background:#2f4050;
+        background:#f3f3f4;
     }
     body .el-table th.gutter{
         display: table-cell!important;

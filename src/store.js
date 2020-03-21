@@ -6,7 +6,7 @@ export default new Vuex.Store({
 
   },
   state: {
-    isFold: true, // 是否默认展开
+    isFold: false, // 是否默认展开
     detailsData: {},  // 当前选中的公告数据
     token:'',
     sign:'',
