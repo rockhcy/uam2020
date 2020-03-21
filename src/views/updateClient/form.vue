@@ -11,36 +11,43 @@
     </el-card>
     <el-card shadow="always" class="m-b">
       <div slot="header" class="clearfix">
-        <h2>系统平台设置 - 全局默认设置</h2>
+        <h2>系统平台设置 - 新客户端</h2>
       </div>
       <el-row>
         <el-col :xs="24" :sm="24" :md="18" :lg="18" :xl="18">
-          <el-form :label-position="labelPosition" label-width="80px" :model="thirdForm">
+          <el-form :label-position="labelPosition" label-width="80px" :model="updateClentForm">
             <h2 class="form-title">容器管理</h2>
-            <el-form-item label="接口地址">
-              <el-input v-model="thirdForm.container_url"></el-input>
-            </el-form-item>
-            <el-form-item label="密钥">
-              <el-input v-model="thirdForm.container_secret"></el-input>
-            </el-form-item>
-            <div class="hr-line-dashed"></div>
-            <h2 class="form-title">资源监控</h2>
-            <el-form-item label="接口地址">
-              <el-input v-model="thirdForm.resource_url"></el-input>
-            </el-form-item>
-            <el-form-item label="密钥">
-              <el-input v-model="thirdForm.resource_secret"></el-input>
+            <el-form-item label="适配系统">
+                <el-select v-model="updateClentForm.system" placeholder="请选择">
+                <el-option label="Windows x86" value="Windows x86"></el-option>
+                <el-option label="Linux x86" value="Linux x86"></el-option>
+                <el-option label="Linux Arm" value="Linux Arm"></el-option>
+                <el-option label="Android" value="Android"></el-option>
+                <el-option label="Linux MIPS" value="Linux MIPS"></el-option>
+              </el-select>
             </el-form-item>
             <div class="hr-line-dashed"></div>
-            <h2 class="form-title">云存储</h2>
-            <el-form-item label="接口地址">
-              <el-input v-model="thirdForm.cloud_url"></el-input>
+            <el-form-item label="下载地址">
+              <el-input v-model="updateClentForm.download_url"></el-input>
             </el-form-item>
-            <el-form-item label="密钥">
-              <el-input v-model="thirdForm.cloud_secret"></el-input>
+            <div class="hr-line-dashed"></div>
+
+            <el-form-item label="哈稀校验">
+              <el-input v-model="updateClentForm.hash"></el-input>
             </el-form-item>
+            <div class="hr-line-dashed"></div>
+
+            <el-form-item label="强制更新">
+              <el-switch
+                v-model="updateClentForm.force_update"
+                active-color="#13ce66"
+                inactive-color="#ff4949"
+              ></el-switch>
+            </el-form-item>
+            <div class="hr-line-dashed"></div>
 
             <el-form-item>
+                <el-button type="default" @click="goback">返回</el-button>
                 <el-button type="success" @click="submitForm('ruleForm')">保存系统平台设置</el-button>
             </el-form-item>
           </el-form>
@@ -52,24 +59,25 @@
 
 <script>
 export default {
-  name: "ThirdParty",
+  name: "UpdateClientForm",
   data() {
     return {
       labelPosition: "right",
-      thirdForm: {
-        container_url: "",
-        container_secret: "",
-        resource_url: '',
-        resource_secret: '',
-        cloud_url: '',
-        cloud_secret: ''
+      updateClentForm: {
+        system: "",
+        download_url: '',
+        hash: '',
+        force_update: ''
       }
     };
   },
   methods: {
     submitForm () {
       alert('submitForm')
-    }
+    },
+    goback () {
+        this.$router.push('/updateClient/index')
+    } 
   }
 };
 </script>
