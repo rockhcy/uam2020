@@ -1,9 +1,9 @@
 <template>
-    <div class="nav">
-        <figure class="nav-top">
-            <img src="../../../assets/img.jpg" class="usreImg" @click="imgClick()">
-            <p>哎嘿</p>
-            <el-dropdown @command="handleCommand">
+    <div class="nav" :style="{ 'width': $store.state.isFold ? '60px' : '200px' }">
+        <figure class="nav-top" v-if="!$store.state.isFold">
+            <img  src="../../../assets/img.jpg" class="usreImg" @click="imgClick()">
+            <p >哎嘿</p>
+            <el-dropdown @command="handleCommand" >
               <span class="el-dropdown-link">
                 系统管理员<i class="el-icon-arrow-down el-icon--right"></i>
               </span>
@@ -14,10 +14,12 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </figure>
-        <el-row style="height: calc(100% - 200px);background: #2f4050">
+        <el-row :style="{ 'height': $store.state.isFold ? '100%' : 'height: calc(100% - 200px)' }"
+                style="background: #2f4050">
             <el-scrollbar class="hide-x" :native="false" :noresize="false" style="height: 100%">
                 <el-menu
                         router
+                        :collapse="$store.state.isFold"
                         unique-opened
                         ref="menu"
                         class="el-menu-vertical-demo"
@@ -70,6 +72,9 @@
                             {"treeLeaf":true,
                                 'menuName':'应用主机程序库',
                                 'menuHref':"/hostProgram/index"},
+                            {"treeLeaf":true,
+                                'menuName':'应用集合管理',
+                                'menuHref':"/appGroup/index"},
                             {"treeLeaf":true,
                                 'menuName':'文件关联',
                                 'menuHref':"/file/index"},
@@ -193,6 +198,7 @@
                         ]
                     },
                 ],
+
             }
         },
         created() {
@@ -203,7 +209,7 @@
                 if(command=='a'){
                     this.$router.push(
                         {
-                            path: '/Profile/index',
+                            path: '/profile/index',
                         }
                     );
                 }
@@ -235,7 +241,7 @@
             .el-scrollbar__view {
                 .el-menu-vertical-demo {
                     overflow: auto;
-
+                    border: none;
                     .el-menu-item {
                         font-size: 16px;
                         font-family: 微软雅黑;
