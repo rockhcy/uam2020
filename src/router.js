@@ -28,6 +28,7 @@ import RemoteUser from './views/remoteUser/index'
 import Journal from './views/journal/index'
 import SystemLog from './views/systemLog/index'
 import Profile from './views/profile/index'
+import AppGroup from  './views/appGroup/index'
 Vue.use(Router)
 
 export default new Router({
@@ -152,7 +153,12 @@ export default new Router({
           path: '/profile/index',
           name: '/profile/index',
           component: Profile,
+        },{
+          path: '/appGroup/index',
+          name: '/appGroup/index',
+          component: AppGroup,
         },
+
   ]}
   ]
 })
