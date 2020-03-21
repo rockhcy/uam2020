@@ -150,10 +150,11 @@ export default new Router({
           path: '/systemLog/index',
           name: '/systemLog/index',
           component: SystemLog,
-        },{
+        }, {
           path: '/updateClient/add',
           name: '/updateClient/add',
           component: UpdateClientForm,
+        },{
           path: '/profile/index',
           name: '/profile/index',
           component: Profile,
