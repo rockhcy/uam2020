@@ -136,10 +136,6 @@
     .el-icon-close{
         color: crimson
     }
-    .center{
-        height: calc(100% - 60px);
-        padding: 20px 25px 40px 25px;
-    }
     .profile-main{
         width: 100%;
         height: 100%;

@@ -154,8 +154,8 @@
          right: 0;
          margin: auto;
          display: flex;
-        width: 70vw;
-        height: 50vh;
+        width: 1014px;
+        height: 428px;
          min-height: 450px;
         padding: 15px 20px 45px 20px;
         background: #ffffff;
@@ -210,7 +210,7 @@
         font-weight: bold;
     }
     .form-class{
-        width: 450px;
+        /*width: 450px;*/
         margin:20px;
     }
 </style>
