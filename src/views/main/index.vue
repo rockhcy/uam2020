@@ -29,9 +29,9 @@
                             stripe
                             style="width: 100%">
                         <el-table-column
-                                prop="index"
                                 label="#"
-                                width="180">
+                                width="180"
+                                type="index">
                         </el-table-column>
                         <el-table-column
                                 prop="app"

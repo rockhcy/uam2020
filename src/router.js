@@ -30,6 +30,12 @@ import SystemLog from './views/systemLog/index'
 import UpdateClientForm from './views/updateClient/form'
 import Profile from './views/profile/index'
 import AppGroup from  './views/appGroup/index'
+
+// 应用管理 - 应用分类
+import classification from  './views/classification'
+// 添加|编辑云应用
+import editCloud from  './views/editCloud'
+
 Vue.use(Router)
 
 export default new Router({
@@ -162,6 +168,14 @@ export default new Router({
           path: '/appGroup/index',
           name: '/appGroup/index',
           component: AppGroup,
+        },{
+          path: '/classification',
+          name: 'classification',
+          component: classification,
+        },{
+          path: '/editCloud',
+          name: 'editCloud',
+          component: editCloud,
         },
 
   ]}
