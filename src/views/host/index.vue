@@ -129,7 +129,7 @@ export default {
         desc: ""
       },
       name: "主机管理",
-      breadData: ["主机管理", "系统管理"],
+      breadData: ["系统管理"],
       data: [
         {
           name: "负载均衡服务器",

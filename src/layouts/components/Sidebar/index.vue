@@ -181,7 +181,7 @@
                         'childrenNodes':[
                             {"treeLeaf":true,
                                 'menuName':'系统授权信息',
-                                'menuHref':"/licence/index",
+                                'menuHref':"/license/index",
                                 }
                             ,{"treeLeaf":true,
                                 'menuName':'更新远程客户端',
@@ -233,6 +233,8 @@
 </script>
 <style lang="scss">
     .hide-x {
+        height: calc(100% - 200px) !important;
+        overflow-y: auto !important;
         .el-scrollbar__wrap {
             &::-webkit-scrollbar {
                 display: none;

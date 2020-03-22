@@ -51,13 +51,13 @@
         transform: translateX(30px);
     }
     .g-main{
-        width: calc(100% - 200px);
         display: block;
         float: left;
         // padding: 0 15px;
         position: relative;
         border-top: 1px solid #e4e7ed;
         overflow-y: auto;
+        height: calc(100% - 103px);
         /*text-align: center;*/
     }
     .footer{
