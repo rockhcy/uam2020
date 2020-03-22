@@ -47,7 +47,7 @@
         data(){
             return{
                 name: "个人中心",
-                breadData: ["系统导航", "个人中心"],
+                breadData: ["个人中心"],
                 form: {
                     name: '',
                     region: '',

@@ -64,8 +64,8 @@ export default new Router({
           component: Host,
         },
         {
-          path: '/licence/index',
-          name: '/licence/index',
+          path: '/license/index',
+          name: '/license/index',
           component: License,
         },
         {

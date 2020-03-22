@@ -3,6 +3,9 @@
   <el-card class="box-card">
     <div class="name">{{name}}</div>
     <ul class="bread">
+      <li>
+        <span @click="$router.push('/main/index')">系统导航</span> <span>/</span>
+      </li>
       <li v-for="(item, i) in breadData" :key="i">
         <span>{{item}}</span> <span>/</span>
       </li>
