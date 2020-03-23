@@ -30,7 +30,10 @@ import SystemLog from './views/systemLog/index'
 import UpdateClientForm from './views/updateClient/form'
 import Profile from './views/profile/index'
 import AppGroup from  './views/appGroup/index'
-import UserAdd from './views/user/add'
+import TicketDetail from './views/mailbox/detail'
+import GroupForm from './views/group/groupForm'
+import RoleForm from './views/role/form'
+
 // 应用管理 - 应用分类
 import classification from  './views/classification'
 // 添加|编辑云应用
@@ -177,9 +180,17 @@ export default new Router({
           name: 'editCloud',
           component: editCloud,
         },{
-        path:'/user/add',
-          name:'/user/add',
-          component:UserAdd,
+          path: '/mailbox/detail',
+          name: '/mailbox/detail',
+          component: TicketDetail,
+        },{
+          path: '/group/add',
+          name: '/group/add',
+          component: GroupForm,
+        },{
+          path: '/role/add',
+          name: '/role/add',
+          component: RoleForm,
         }
 
   ]}
