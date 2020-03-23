@@ -8,7 +8,7 @@
         <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
       </div>
       <el-row>
-        <el-col :span="12">
+        <el-col ::xs="24" :sm="24" :md="12" :lg="12">
           <el-button @click="dialogFormVisible = true">添加服务器</el-button>
           <el-button type="danger">移除服务器</el-button>
           <el-button type="success" @click="dialogFormVisible = true">应用分类更名</el-button>
@@ -18,7 +18,7 @@
             <el-table-column prop="value" label="应用数量"></el-table-column>
           </el-table>
         </el-col>
-        <el-col :span="12">
+        <el-col :xs="24" :sm="24" :md="12" :lg="12">
           <div style="height: 500px">
             <chart :option="option"></chart>
           </div>

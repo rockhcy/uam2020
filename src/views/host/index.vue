@@ -6,7 +6,7 @@
     <el-tabs class="tabs" type="border-card">
       <el-tab-pane label="主机视图">
         <el-row>
-          <el-col class="col_class" v-for="(item, i) in data" :key="i" :span="6">
+          <el-col class="col_class" v-for="(item, i) in data" :key="i" :xs="24" :sm="24" :md="12" :lg="6">
             <div @click="$router.push('/profile/index')">
               <img alt="image" style="width: 130px;" src="../../assets/11.png" />
               <div class="col_name">{{item.name}}</div>
