@@ -1,100 +1,75 @@
 <template>
-<div>
-    test 
-</div>
+  <div class="p-m">
+    <el-card shadow="always" class="m-b">
+      <div slot="header" class="clearfix">
+        <h2>用户角色</h2>
+      </div>
+      <el-breadcrumb separator="/">
+        <el-breadcrumb-item :to="{ path: '/' }">系统导航</el-breadcrumb-item>
+        <el-breadcrumb-item>用户角色</el-breadcrumb-item>
+      </el-breadcrumb>
+    </el-card>
+
+    <el-card shadow="always" class="m-b">
+      <div slot="header" class="clearfix">
+        <h2>用户角色</h2>
+      </div>
+      <el-row class="m-b">
+        <el-col :xs="18" :sm="18" :md="18" :lg="18" :xl="18">
+          <el-button-group>
+            <el-button type="default" @click="addItem">创建角色</el-button>
+            <el-button type="danger">移除角色</el-button>
+            <el-button type="warning">编辑角色</el-button>
+          </el-button-group>
+        </el-col>
+
+        <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
+          <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
+            <el-button slot="append" type="success">Go</el-button>
+          </el-input>
+        </el-col>
+      </el-row>
+      <el-table style="width: 100%" :data="tableData">
+        <el-table-column label="名称" prop="name"></el-table-column>
+        <el-table-column label="说明" prop="description"></el-table-column>
+        <el-table-column label="使用者" prop="user_number"></el-table-column>
+      </el-table>
+    </el-card>
+  </div>
 </template>
 <script>
-    export default {
-        name: 'Role',
-        data() {
-            return {
-
-            }
+export default {
+  name: "Group",
+  data() {
+    return {
+      activeName: "组织",
+      tableData: [
+        {
+          name: "应用管理员",
+          description: "获取应用、发布用户、管理云应用相关权限",
+          user_number: "12 人",
+        },{
+          name: "组织管理员",
+          description: "创建组织和管理管理组织",
+          user_number: "30 人",
+        },{
+          name: "应用管理员",
+          description: "获取应用、发布用户、管理云应用相关权限",
+          user_number: "70 人",
+        },{
+          name: "应用管理员",
+          description: "获取应用、发布用户、管理云应用相关权限",
+          user_number: "10 人",
         },
-        created() {
-
-        },
-        methods: {
-        },
-
-    }
+      ],
+      search_key: ""
+    };
+  },
+  methods: {
+    addItem() {
+      this.$router.push("/role/add");
+    },
+  }
+};
 </script>
-//下拉框样式
-<style lang="scss" scoped>
-    .el-select-dropdown {
-        background-color: #d1d5e5 !important;
-        color: #000000;
-        border: none;
-        .el-scrollbar {
-            .el-scrollbar__view {
-                padding: 0 5px;
-                .el-select-dropdown__item {
-                    color: #000000;
-                    border-bottom: 1px solid rgba(0,0,0,0.5);
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.2);
-                        color: #000000;
-                    }
-                    &:last-child {
-                        border: none;
-                    }
-                }
-                .hover {
-                    background-color: rgba(0, 0, 0, 0.2);
-                    color: #ffffff;
 
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.2);
-                        color: #ffffff;
-                    }
-                }
-            }
-        }
-    }
-    .main-center {
-        .el-tree {
-            background-color: rgba(0, 0, 0, 0.4);
-            color: #ffffff;
-            overflow: auto;
-            &::-webkit-scrollbar{
-                display: none;
-            }
-            .el-tree-node {
-                &:focus > .el-tree-node__content {
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-                .el-tree-node__content {
-                    height: 40px;
-                    line-height: 40px;
-                    &:hover {
-                        background-color: rgba(0, 0, 0, 0.5);
-                    }
-                    .el-tree-node__label {
-                        letter-spacing: 2px;
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
-
-        .table-bot {
-            .el-button {
-                margin-left: 50px;
-                width: 120px;
-                background-color:#1c7dfa;
-                border: none;
-            }
-        }
-    }
-</style>
-<style scoped>
-    .table-bot {
-        height: 62px;
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.4);
-        line-height: 62px;
-        color: #ffffff;
-        font-size: 24px;
-        text-align: left;
-    }
-</style>
