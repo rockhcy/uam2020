@@ -25,7 +25,7 @@
             <el-table :data="data" style="width: 100%">
                 <el-table-column align="center" label="#" width="50" type="index"></el-table-column>
                 <el-table-column prop="name" label="" width="70">
-                    <template slot-scope="scope">
+                    <template>
                         <img style="width: 45px" src="../../assets/timg.jpg"/>
                     </template>
                 </el-table-column>
@@ -35,7 +35,7 @@
                 <el-table-column prop="port1" label="所在集群"></el-table-column>
                 <el-table-column prop="port2" label="应用分类"></el-table-column>
                 <el-table-column align="center" label="" width="200">
-                    <template slot-scope="scope">
+                    <template>
                         <el-button @click="$router.push('/editCloud')">编辑</el-button>
                         <el-button type="danger">删除</el-button>
                     </template>

@@ -19,7 +19,7 @@
                         <el-table-column
                                 prop="app"
                                 label="">
-                            <template slot-scope="scope">
+                            <template>
                                 <img style="width: 45px" src="../../assets/appgroup2.png"/>
                             </template>
                         </el-table-column>
@@ -55,7 +55,7 @@
                         <el-table-column
                                 prop="app"
                                 label="">
-                            <template slot-scope="scope">
+                            <template>
                                 <img style="width: 45px" src="../../assets/timg.jpg"/>
                             </template>
                         </el-table-column>
@@ -85,7 +85,7 @@
 </template>
 
 <script>
-    import Popup from './components/Popup';;
+    import Popup from './components/Popup';
 
     export default {
         name: "AppGroup",
