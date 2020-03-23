@@ -77,23 +77,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.p-m {
-  padding: 20px;
-}
-.m-b {
-  margin-bottom: 20px;
-}
-.form-title {
-  /* font-weight: 300; */
-  margin-bottom: 15px;
-}
-.hr-line-dashed {
-  border-top: 1px dashed #e7eaec;
-  color: #ffffff;
-  background-color: #ffffff;
-  height: 1px;
-  margin: 20px 0;
-}
 .systemLog {
   ::v-deep .el-select .el-input {
     width: 130px;

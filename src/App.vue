@@ -4,6 +4,7 @@
     </div>
 </template>
 <script>
+import '@/style/global.scss'
     export default {
         name:'app',
         provide(){
