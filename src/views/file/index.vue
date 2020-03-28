@@ -5,14 +5,16 @@
     <el-card>
       <div slot="header" class="clearfix">
         <span>云应用池</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
       </div>
       <div>
-        <el-button type="text" v-for="item in linkData" :key="item">{{item}}</el-button>
-        <div class="search" style="display: block;float: right">
-          <el-input v-model="input" placeholder="请输入内容" style="width: 200px;"></el-input>
-          <el-button icon="el-icon-search"></el-button>
-        </div>
+        <el-row>
+          <el-col :xs="24" :sm="24" :md="12" :lg="18"><div class="grid-content bg-purple"><el-button type="text" v-for="item in linkData" :key="item">{{item}}</el-button></div>
+          </el-col>
+          <el-col :xs="24" :sm="24" :md="12" :lg="6"><div class="grid-content bg-purple"> <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
+            <el-button slot="append" type="success">Go</el-button>
+          </el-input></div>
+          </el-col>
+        </el-row>
       </div>
       <el-table :data="data" style="width: 100%">
         <el-table-column align="center" label="#" width="50" type="index"></el-table-column>
@@ -38,7 +40,7 @@
           </template>
         </el-table-column>
       </el-table>
-      <el-dialog title :visible.sync="dialogFormVisible" width="65%">
+      <el-dialog title :visible.sync="dialogFormVisible" width="30%">
         <h1 style="width: 100%;text-align: center;font-size: 25px;">设置文件类型与云应用关联</h1>
         <p
           style="width: 100%;text-align: center;font-size: 16px;"
@@ -87,6 +89,7 @@ export default {
   name: "file",
   data() {
     return {
+      search_key:'',
         input: '',
       dynamicTags: [],
       inputValue: "",

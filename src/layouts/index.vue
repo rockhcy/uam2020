@@ -2,12 +2,13 @@
     <div class="quanbu">
         <layout-header/>
         <layout-sidebar/>
-        <main ref="main" class="g-main" :style="{ 'width': $store.state.isFold ? 'calc(100% - 60px)' : 'calc(100% - 200px)' }">
+        <main ref="main" class="g-main"
+              :style="{ 'width':  `calc(100% - ${$store.state.menuWidth})` }">
             <transition name="fade-move" mode="out-in">
                     <router-view></router-view>
             </transition>
         </main>
-        <div class="footer" :style="{ 'width': $store.state.isFold ? 'calc(100% - 60px)' : 'calc(100% - 200px)' }">
+        <div class="footer" :style="{ 'width': `calc(100% - ${$store.state.menuWidth})` }">
             <div class="footer-left">和信创天科技股份有限公司</div>
             <div class="footer-right">Copyright VEsystem © 2009-2020</div></div>
     </div>
@@ -25,9 +26,13 @@
             return {};
         },
         created(){
-
+            if (document.body.clientWidth < 600) {
+                this.$store.state.isPhone = true;
+            }
+            window.onresize = () => {
+                this.$store.state.isPhone = document.body.clientWidth < 600;
+            }
         },
-        computed: {}
     };
 </script>
 <style lang="scss">
@@ -77,5 +82,8 @@
         display: inline-block;
         float: right;
         padding-right: 29px;
+    }
+    .phoneClass{
+        width: 100%!important;
     }
 </style>

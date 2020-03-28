@@ -4,10 +4,10 @@
         <el-card class="box-card center-footer">
             <div slot="header" class="clearfix">
                 <span>云应用池</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <el-row :gutter="20">
-                <el-col :span="10"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="10"><div class="grid-content bg-purple">
                     <el-table
                             :data="tableData"
                             stripe
@@ -42,7 +42,7 @@
                     <el-button @click="addClick" type="primary">调整应用组</el-button>
                 </div>
                 </el-col>
-                <el-col :span="14"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="14"><div class="grid-content bg-purple">
                     <el-table
                             :data="tableList"
                             stripe

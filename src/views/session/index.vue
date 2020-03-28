@@ -3,7 +3,7 @@
     <bread-crumb :name="name" :breadData="breadData"></bread-crumb>
     <el-card class="box-card">
       <el-row :gutter="20">
-        <el-col :span="8">
+        <el-col :xs="24" :sm="24" :md="12" :lg="8">
           <div class="grid-content bg-purple">
             <p class="p-lable">会话主机 ( 切换应用主机服务器 )</p>
             <el-select v-model="region" placeholder="请选择活动区域" class="select1">
@@ -13,28 +13,28 @@
             </el-select>
           </div>
         </el-col>
-        <el-col :span="16">
+        <el-col :xs="24" :sm="24" :md="12" :lg="16">
           <div class="grid-content bg-purple">
             <el-row :gutter="20">
-              <el-col :span="6">
+              <el-col :xs="24" :sm="12" :md="12" :lg="6">
                 <div class="grid-content bg-purple">
                   <h1>75</h1>
                   <div class="text-navy">会话总数</div>
                 </div>
               </el-col>
-              <el-col :span="6">
+              <el-col :xs="24" :sm="12" :md="12" :lg="6">
                 <div class="grid-content bg-purple">
                   <h1>1024</h1>
                   <div class="text-navy">进程总数</div>
                 </div>
               </el-col>
-              <el-col :span="6">
+              <el-col :xs="24" :sm="12" :md="12" :lg="6">
                 <div class="grid-content bg-purple">
                   <h1>192.168.0.0</h1>
                   <div class="text-navy">ip</div>
                 </div>
               </el-col>
-              <el-col :span="6">
+              <el-col :xs="24" :sm="12" :md="12" :lg="6">
                 <div class="grid-content bg-purple">
                   <h1>HOST 01</h1>
                   <div class="text-navy">主机</div>
@@ -48,11 +48,13 @@
     <el-card class="box-card center-footer">
       <div slot="header" class="clearfix">
         <span>远程会话管理</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
       </div>
+      <el-button-group class="group-btn">
       <el-button @click="dialogFormOne = true">会话消息通知</el-button>
       <el-button type="danger" @click="open">强制注销会话</el-button>
       <el-button type="success" @click="dialogFormThree = true">发起会话进程</el-button>
+      </el-button-group>
       <el-table :data="data" stripe style="width: 100%">
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="id" label="Session ID" sortable></el-table-column>
@@ -91,14 +93,14 @@
         :total="12"
         class="el-pa"
       ></el-pagination>
-      <el-dialog title :visible.sync="dialogFormOne" width="65%">
+      <el-dialog title :visible.sync="dialogFormOne" width="30%">
         <h1 style="width: 100%;text-align: center;font-size: 25px;">会话消息通知</h1>
         <p
           style="width: 100%;text-align: center;font-size: 16px;"
         >向会话发送文本通知消息</p>
         <el-form :model="form" label-position="top">
           <el-row>
-            <el-col :span="24">
+            <el-col :xs="24" :sm="24" :md="12" :lg="24">
               <el-form-item label="通知内容：">
                 <el-input v-model="input" placeholder="请输入内容" style="width: 100%;"></el-input>
               </el-form-item>
@@ -111,14 +113,14 @@
         </div>
       </el-dialog>
 
-      <el-dialog title :visible.sync="dialogFormThree" width="65%">
+      <el-dialog title :visible.sync="dialogFormThree" width="30%">
         <h1 style="width: 100%;text-align: center;font-size: 25px;">发起会话进程</h1>
         <p
           style="width: 100%;text-align: center;font-size: 16px;"
         >在用户的当前活动会话下，开启一个新的进程（启动一个指定的应用程序）</p>
         <el-form :model="form" label-position="top">
           <el-row>
-            <el-col :span="24">
+            <el-col :xs="24" :sm="24" :md="12" :lg="24">
               <el-form-item label="远程进程（程序路径）：">
                 <el-input v-model="input" placeholder="请输入内容" style="width: 100%;"></el-input>
               </el-form-item>

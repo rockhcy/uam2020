@@ -5,21 +5,27 @@
         <el-card>
             <div slot="header" class="clearfix">
                 <span>云应用池</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <div>
-                <el-dropdown size="medium" split-button type="primary">
-                    添加云应用
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item @click.native="$router.push('/editCloud')">手工添加云应用</el-dropdown-item>
-                        <el-dropdown-item @click.native="$router.push('/hostProgram/index')">从应用主机获取</el-dropdown-item>
-                    </el-dropdown-menu>
-                </el-dropdown>
-                <el-button @click="$router.push('/classification')">管理应用分类</el-button>
-                <div class="search" style="display: block;float: right">
-                    <el-input v-model="input" placeholder="请输入内容" style="width: 200px;"></el-input>
-                    <el-button icon="el-icon-search"></el-button>
-                </div>
+                <el-row>
+                    <el-col :xs="24" :sm="24" :md="12" :lg="18"><div class="grid-content bg-purple">
+                        <el-dropdown size="medium" split-button type="primary">
+                        添加云应用
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item @click.native="$router.push('/editCloud')">手工添加云应用</el-dropdown-item>
+                            <el-dropdown-item @click.native="$router.push('/hostProgram/index')">从应用主机获取</el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                        <el-button @click="$router.push('/classification')">管理应用分类</el-button></div></el-col>
+                    <el-col :xs="24" :sm="24" :md="12" :lg="6"><div class="grid-content bg-purple">
+                        <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
+                            <el-button slot="append" type="success">Go</el-button>
+                        </el-input>
+                    </div></el-col>
+                </el-row>
+
+
             </div>
             <el-button type="text" v-for="item in linkData" :key="item">{{item}}</el-button>
             <el-table :data="data" style="width: 100%">
@@ -50,6 +56,7 @@
         name: "APP",
         data() {
             return {
+                search_key:'',
                 input: '',
                 name: "应用管理",
                 breadData: ["应用管理"],

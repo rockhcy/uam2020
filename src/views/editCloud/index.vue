@@ -5,17 +5,18 @@
     <el-card>
       <div slot="header" class="clearfix">
         <span>应用分类</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
       </div>
       <el-row>
-        <el-col :span="6">
+        <el-col  :xs="24" :sm="24" :md="12" :lg="6">
           <img style="width: 230px;display: block;margin: 0 auto" src="../../assets/timg.jpg"/>
           <div style="display: block;margin: 0 auto;width: 67%;marginTop: 10px;">
+            <el-button-group class="group-btn">
             <el-button type="primary">指定图标</el-button>
-            <el-button type="danger">恢复默认</el-button>
+              <el-button type="danger">恢复默认</el-button></el-button-group>
           </div>
         </el-col>
-        <el-col :span="18">
+        <el-col  :xs="24" :sm="24" :md="12" :lg="18">
           <el-form ref="form" :model="form" label-width="180px">
             <el-form-item label="应用（显示）名称：">
               <el-input v-model="form.name"></el-input>
@@ -44,8 +45,10 @@
               <el-input v-model="form.name"></el-input>
             </el-form-item>
           </el-form>
+          <el-button-group class="group-btn">
           <el-button style="marginLeft: 180px" @click="$router.go(-1)">返回</el-button>
           <el-button type="primary">保存</el-button>
+          </el-button-group>
         </el-col>
       </el-row>
     </el-card>

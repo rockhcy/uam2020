@@ -5,13 +5,15 @@
     <el-card>
       <div slot="header" class="clearfix">
         <span>应用分类</span>
-        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--        <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
       </div>
       <el-row>
-        <el-col ::xs="24" :sm="24" :md="12" :lg="12">
+        <el-col :xs="24" :sm="24" :md="12" :lg="12">
+          <el-button-group class="group-btn">
           <el-button @click="dialogFormVisible = true">添加服务器</el-button>
           <el-button type="danger">移除服务器</el-button>
           <el-button type="success" @click="dialogFormVisible = true">应用分类更名</el-button>
+          </el-button-group>
           <el-table :data="data" style="width: 100%">
             <el-table-column align="center" label="#" width="50" type="index"></el-table-column>
             <el-table-column prop="name" label="应用分类" width="250"></el-table-column>
@@ -24,7 +26,7 @@
           </div>
         </el-col>
       </el-row>
-      <el-dialog title :visible.sync="dialogFormVisible" width="65%">
+      <el-dialog title :visible.sync="dialogFormVisible" width="30%">
         <h1 style="width: 100%;text-align: center;font-size: 25px;">创建|编排 应用分类</h1>
         <p
           style="width: 100%;text-align: center;font-size: 16px;"

@@ -2,16 +2,19 @@
     <div class="center">
         <bread-crumb :name="name" :breadData="breadData"></bread-crumb>
         <div class="center-footer">
+            <el-button-group class="group-btn">
             <el-button>添加管理员</el-button>
             <el-button type="danger">移除管理员</el-button>
+            </el-button-group>
             <el-row :gutter="20" style="margin-top: 20px">
-                <el-col  :span="6" class="row-col" :gutter="20" :key="index" v-for="(item, index) in list"><div class="grid-content bg-purple">
-                    <el-row >
-                        <el-col :span="8"><div class="grid-content bg-purple" style="text-align: center">
+                <el-col  :xs="24" :sm="24" :md="12" :lg="6" class="row-col" :gutter="20" :key="index" v-for="(item, index) in list">
+                    <div class="grid-content bg-purple">
+                    <el-row>
+                        <el-col :xs="24" :sm="24" :md="12" :lg="8"><div class="grid-content bg-purple" style="text-align: center">
                             <img class="img-responsive" src="../../assets/user.png">
                         </div>
                         </el-col>
-                        <el-col :span="16" >
+                        <el-col :xs="24" :sm="24" :md="12" :lg="16" style="padding: 20px">
                             <div class="grid-content bg-purple">
                             <h3>{{item.name}}</h3>
                             <p class="row-p">{{item.role}}</p>
