@@ -4,7 +4,7 @@
         <el-card class="box-card center-footer">
             <div slot="header" class="clearfix">
                 <span>用户资料</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <el-form ref="form" :model="form" label-width="180px">
                 <el-form-item label="登录ID：">

@@ -2,7 +2,7 @@
     <el-dialog
 
             :visible.sync="dialogVisible"
-            width="65%"
+            width="30%"
             class="popup"
             :before-close="close">
         <h1 style="width: 100%;text-align: center;font-size: 25px;">批量创建用户</h1>

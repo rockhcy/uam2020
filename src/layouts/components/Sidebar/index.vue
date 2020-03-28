@@ -1,8 +1,8 @@
 <template>
-    <div class="nav" :style="{ 'width': $store.state.isFold ? '60px' : '200px' }">
+    <div class="nav" :style="{ 'width': $store.state.menuWidth }">
         <figure class="nav-top" v-if="!$store.state.isFold">
             <img  src="../../../assets/img.jpg" class="usreImg" @click="imgClick()">
-            <p >哎嘿</p>
+            <p>哎嘿</p>
             <el-dropdown @command="handleCommand" >
               <span class="el-dropdown-link">
                 系统管理员<i class="el-icon-arrow-down el-icon--right"></i>
@@ -26,6 +26,7 @@
                         style="height: 100%"
                         background-color="rgba(0,0,0,0)"
                         text-color="#ffffff"
+                        @open="handleOpen" @close="handleClose"
                         active-text-color="#ffffff"
                         element-loading-background="transparent">
                     <menu-item v-for="item in sideMenu" :key="item.id" :data="item"/>
@@ -198,10 +199,23 @@
                         ]
                     },
                 ],
-
             }
         },
-        created() {
+        computed: {
+            isPhone() {
+                return this.$store.state.isPhone;
+            },
+        },
+        watch: {
+            isPhone(val) {
+                if (val) {
+                    this.$store.state.menuWidth = '0px';
+                    this.$store.state.isFold = true;
+                } else {
+                    this.$store.state.menuWidth = '220px';
+                    this.$store.state.isFold = false;
+                }
+            },
         },
         methods: {
             handleCommand(command) {
@@ -228,18 +242,23 @@
                     })
                 }
             },
+            handleOpen(key, keyPath) {
+                console.log(key, keyPath);
+            },
+            handleClose(key, keyPath) {
+                console.log(key, keyPath);
+            }
         }
     }
 </script>
 <style lang="scss">
     .hide-x {
-        height: calc(100% - 200px) !important;
+        height: calc(100% - 110px) !important;
         overflow-y: auto !important;
         .el-scrollbar__wrap {
             &::-webkit-scrollbar {
                 display: none;
             }
-
             .el-scrollbar__view {
                 .el-menu-vertical-demo {
                     overflow: auto;
@@ -247,25 +266,24 @@
                     .el-menu-item {
                         font-size: 16px;
                         font-family: 微软雅黑;
-
                         &:hover {
                             background-color: rgba(0, 0, 0, 0.2) !important;
                         }
-
                         &:focus {
                             background-color: rgba(0, 0, 0, 0.2) !important;
                         }
                         .icon{
                              color: #ffffff;
+                            margin-right: 5px;
                         }
                     }
-
                     .el-submenu {
                         .el-submenu__title {
                             font-size: 16px;
                             font-family: 微软雅黑;
                             .icon{
                                 color:#ffffff;
+                                margin-right: 5px;
                             }
                             .el-submenu__icon-arrow {
                                 color: #ffffff;
@@ -284,25 +302,35 @@
             }
         }
     }
+    //伸缩以后得样式
+    .el-menu--vertical{
+        .el-menu{
+            .el-menu-item{
+                color:#ffffff !important;
+                background-color: #2f4050 !important;
+            }
+        }
+    }
 </style>
 <style scoped>
     .el-dropdown-link {
         cursor: pointer;
-        color: #ffffff;
-        font-size: 18px;
+        color: #8095a8;
+        font-size: 16px;
+
     }
     .el-icon-arrow-down {
         font-size: 18px;
     }
     .nav {
-        width: 200px;
+        width: 220px;
         height: calc(100% - 63px);
         display: block;
         float: left;
     }
     .nav-top {
         width: 100%;
-        height:200px;
+        height:110px;
         text-align: center;
         display: block;
         color: #ffffff;
@@ -310,13 +338,13 @@
     }
 
     .usreImg {
-        width: 120px;
-        height: 120px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
     }
 
     .nav-top p {
-        font-size: 24px;
+        font-size: 16px;
         font-family: 微软雅黑;
     }
 
@@ -325,19 +353,6 @@
         font-family: 微软雅黑;
     }
 
-    .nav-footer {
-        width: 200px;
-        display: flex;
-        margin-bottom: 20px;
-        margin-top: 10px;
-    }
-
-    .iconPage {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        justify-content: center;
-    }
 
     .iconPage div {
         font-size: 16px;

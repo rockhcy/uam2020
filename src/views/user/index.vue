@@ -4,10 +4,10 @@
         <el-card class="box-card center-footer">
             <div slot="header" class="clearfix">
                 <span>用户管理</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <el-row :gutter="20">
-                <el-col :span="18"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="18" :xl="18"><div class="grid-content bg-purple">
                     <el-dropdown size="medium" split-button type="primary">
                         添加用户
                         <el-dropdown-menu slot="dropdown">
@@ -15,14 +15,16 @@
                             <el-dropdown-item @click.native="addClick">批量创建用户</el-dropdown-item>
                         </el-dropdown-menu>
                     </el-dropdown>
+                    <el-button-group class="group-btn">
                     <el-button>导入用户</el-button>
                     <el-button>导入用户表</el-button>
                     <el-button  type="danger" @click="open">删除用户</el-button>
                     <el-button type="warning">锁定用户</el-button>
                     <el-button>解锁用户表</el-button>
                     <el-button type="warning">移动用户</el-button>
+                    </el-button-group>
                 </div></el-col>
-                <el-col :span="6"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"><div class="grid-content bg-purple">
                     <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
                         <el-button slot="append" type="success">Go</el-button>
                     </el-input>
@@ -128,6 +130,11 @@
 
     }
 </script>
-<style scoped>
-
+<style lang="scss">
+.group-btn{
+ .el-button{
+     margin-bottom: 10px;
+     vertical-align: bottom;
+ }
+}
 </style>

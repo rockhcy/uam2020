@@ -14,6 +14,8 @@ export default new Vuex.Store({
     ip:'http://192.168.50.112:10001/',
     instructionsList:{},
     instructions:{},
+    menuWidth: '220px',
+    isPhone: false,
   },
   getters: {
 

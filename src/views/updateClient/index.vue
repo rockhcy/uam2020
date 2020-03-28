@@ -15,7 +15,7 @@
       </div>
       <el-row class="m-b">
           <el-col :xs="18" :sm="18" :md="18" :lg="18" :xl="18">
-              <el-button-group>
+              <el-button-group class="group-btn">
                 <el-button type="default" @click="addItem">发布新的客户端更新</el-button>
                 <el-button type="danger">停用更新</el-button>
             </el-button-group>

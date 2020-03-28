@@ -4,14 +4,14 @@
         <el-card class="box-card center-footer">
             <div slot="header" class="clearfix">
                 <span>异常用户处理</span>
-                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+<!--                <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>-->
             </div>
             <el-row :gutter="20">
-                <el-col :span="18"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="18" :xl="18"><div class="grid-content bg-purple">
                     <el-button type="danger">解除用户锁定</el-button>
                 </div>
                 </el-col>
-                <el-col :span="6"><div class="grid-content bg-purple">
+                <el-col :xs="24" :sm="24" :md="12" :lg="6" :xl="6"><div class="grid-content bg-purple">
                     <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
                         <el-button slot="append" type="success">Go</el-button>
                     </el-input>
@@ -37,7 +37,8 @@
                 </el-table-column>
                 <el-table-column
                         prop="group"
-                        label="隶属组织">
+                        label="隶属组织"
+                width="180">
                 </el-table-column>
                 <el-table-column
                         prop="stare1"

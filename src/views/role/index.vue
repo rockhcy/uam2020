@@ -15,23 +15,23 @@
         <h2>用户角色</h2>
       </div>
       <el-row class="m-b">
-        <el-col :xs="18" :sm="18" :md="18" :lg="18" :xl="18">
-          <el-button-group>
+        <el-col :xs="24" :sm="18" :md="18" :lg="18" :xl="18">
+          <el-button-group class="group-btn">
             <el-button type="default" @click="addItem">创建角色</el-button>
             <el-button type="danger">移除角色</el-button>
             <el-button type="warning">编辑角色</el-button>
           </el-button-group>
         </el-col>
 
-        <el-col :xs="6" :sm="6" :md="6" :lg="6" :xl="6">
+        <el-col :xs="24" :sm="6" :md="6" :lg="6" :xl="6">
           <el-input placeholder="请输入内容" v-model="search_key" class="input-with-select">
             <el-button slot="append" type="success">Go</el-button>
           </el-input>
         </el-col>
       </el-row>
       <el-table style="width: 100%" :data="tableData">
-        <el-table-column label="名称" prop="name"></el-table-column>
-        <el-table-column label="说明" prop="description"></el-table-column>
+        <el-table-column label="名称" prop="name" width="180"></el-table-column>
+        <el-table-column label="说明" prop="description" width="400"></el-table-column>
         <el-table-column label="使用者" prop="user_number"></el-table-column>
       </el-table>
     </el-card>
