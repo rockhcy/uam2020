@@ -34,6 +34,7 @@ import TicketDetail from './views/mailbox/detail'
 import GroupForm from './views/group/groupForm'
 import RoleForm from './views/role/form'
 import UserAdd from './views/user/add'
+import Agreement from './views/license/agreement'
 // 应用管理 - 应用分类
 import classification from  './views/classification'
 // 添加|编辑云应用
@@ -196,7 +197,13 @@ export default new Router({
           path: '/user/add',
           name: '/user/add',
           component: UserAdd,
-        }
+        },
+        {
+          path: '/license/agreement',
+          name: '/license/agreement',
+          component: Agreement,
+        },
+
   ]}
   ]
 })
