@@ -13,6 +13,7 @@
     <i  :class="data[props.menuIcon]"></i>
     <span :class="data.class">{{ data[props.menuName] }}</span>
   </el-menu-item>
+
 </template>
 <script>
   import {mapGetters} from 'vuex'
@@ -51,7 +52,8 @@ export default {
   },
   methods: {
     selectClick(data) {
-      // console.log(data.menuName,data.menuHref,data.menuIcon);
+      // eslint-disable-next-line no-console
+      console.log(data);
     },
   },
 };

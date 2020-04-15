@@ -14,9 +14,8 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </figure>
-        <el-row :style="{ 'height': $store.state.isFold ? '100%' : 'height: calc(100% - 200px)' }"
-                style="background: #2f4050">
-            <el-scrollbar class="hide-x" :native="false" :noresize="false" style="height: 100%">
+        <el-row style="background: #2f4050">
+            <el-scrollbar :class= "`hide-x ${!$store.state.isFold?'':'closemenu'}`" :native="false" :noresize="false">
                 <el-menu
                         router
                         :collapse="$store.state.isFold"
@@ -243,26 +242,43 @@
                 }
             },
             handleOpen(key, keyPath) {
+                // eslint-disable-next-line no-console
                 console.log(key, keyPath);
             },
             handleClose(key, keyPath) {
+                // eslint-disable-next-line no-console
                 console.log(key, keyPath);
             }
         }
     }
 </script>
 <style lang="scss">
+    .closemenu{
+        height: 100% !important;
+        .el-scrollbar__wrap {
+            .el-scrollbar__view {
+                .el-menu-vertical-demo {
+                    width: auto !important;
+                    margin-right: 6px;
+                    transition: width 0.28s;
+                }
+            }
+        }
+    }
     .hide-x {
-        height: calc(100% - 110px) !important;
+        height: calc(100% - 110px);
         overflow-y: auto !important;
         .el-scrollbar__wrap {
+            margin-bottom:0 !important;
+            margin-right: 0 !important;
             &::-webkit-scrollbar {
                 display: none;
             }
             .el-scrollbar__view {
                 .el-menu-vertical-demo {
-                    overflow: auto;
+                    /*overflow: auto;*/
                     border: none;
+
                     .el-menu-item {
                         font-size: 16px;
                         font-family: 微软雅黑;
@@ -274,7 +290,7 @@
                         }
                         .icon{
                              color: #ffffff;
-                            margin-right: 5px;
+                            margin-right: 20px;
                         }
                     }
                     .el-submenu {
@@ -283,7 +299,7 @@
                             font-family: 微软雅黑;
                             .icon{
                                 color:#ffffff;
-                                margin-right: 5px;
+                                margin-right: 20px;
                             }
                             .el-submenu__icon-arrow {
                                 color: #ffffff;
