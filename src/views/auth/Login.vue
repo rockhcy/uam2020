@@ -74,7 +74,6 @@
     </div>
 </template>
 <script>
-   import secret from '../../secret.js';
    export default {
         name: 'Login',
         data() {
@@ -98,7 +97,11 @@
             }
         },
         created(){
-
+                this.$http.get("api/user").then((res) => {
+                    console.log(res);
+                }).catch((res) => {
+                    console.log(res);
+                });
         },
         methods: {
             handleClick(tab, event) {
